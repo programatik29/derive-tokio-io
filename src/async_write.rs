@@ -21,7 +21,7 @@ pub(crate) fn expand_async_write(input: DeriveInput) -> syn::Result<TokenStream>
                 self: ::std::pin::Pin<&mut Self>,
                 cx: &mut ::std::task::Context<'_>,
                 buf: &[u8],
-            ) -> ::std::task::Poll<std::io::Result<usize>> {
+            ) -> ::std::task::Poll<::std::io::Result<usize>> {
                 unsafe {
                     ::std::pin::Pin::new_unchecked(&mut self.get_unchecked_mut().#field_id).poll_write(cx, buf)
                 }
@@ -30,14 +30,14 @@ pub(crate) fn expand_async_write(input: DeriveInput) -> syn::Result<TokenStream>
             fn poll_flush(
                 self: ::std::pin::Pin<&mut Self>,
                 cx: &mut ::std::task::Context<'_>,
-            ) -> ::std::task::Poll<std::io::Result<()>> {
+            ) -> ::std::task::Poll<::std::io::Result<()>> {
                 unsafe { ::std::pin::Pin::new_unchecked(&mut self.get_unchecked_mut().#field_id).poll_flush(cx) }
             }
 
             fn poll_shutdown(
                 self: ::std::pin::Pin<&mut Self>,
                 cx: &mut ::std::task::Context<'_>
-            ) -> ::std::task::Poll<std::io::Result<()>> {
+            ) -> ::std::task::Poll<::std::io::Result<()>> {
                 unsafe { ::std::pin::Pin::new_unchecked(&mut self.get_unchecked_mut().#field_id).poll_shutdown(cx) }
             }
         }

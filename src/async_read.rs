@@ -21,7 +21,7 @@ pub(crate) fn expand_async_read(input: DeriveInput) -> syn::Result<TokenStream> 
                 self: ::std::pin::Pin<&mut Self>,
                 cx: &mut ::std::task::Context<'_>,
                 buf: &mut ::tokio::io::ReadBuf<'_>,
-            ) -> ::std::task::Poll<std::io::Result<()>> {
+            ) -> ::std::task::Poll<::std::io::Result<()>> {
                 unsafe {
                     ::std::pin::Pin::new_unchecked(&mut self.get_unchecked_mut().#field_id).poll_read(cx, buf)
                 }
