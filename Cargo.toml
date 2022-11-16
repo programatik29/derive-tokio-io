@@ -1,0 +1,23 @@
+[package]
+name = "derive-tokio-io"
+version = "0.1.0"
+authors = ["Programatik <programatik29@gmail.com>"]
+edition = "2021"
+description = "Derive AsyncRead and AsyncWrite."
+homepage = "https://github.com/programatik29/derive-tokio-io"
+repository = "https://github.com/programatik29/derive-tokio-io"
+license = "MIT"
+keywords = ["tokio", "macro", "derive"]
+categories = ["asynchronous"]
+
+[lib]
+proc-macro = true
+
+[dependencies]
+proc-macro2 = "1"
+quote = "1"
+syn = "1"
+
+[dev-dependencies]
+tokio = { version = "1", features = ["full"] }
+trybuild = "1"
