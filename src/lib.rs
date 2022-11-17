@@ -8,7 +8,7 @@
 //! ```rust
 //! use derive_tokio_io::{AsyncRead, AsyncWrite};
 //! use tokio::net::TcpStream;
-//! 
+//!
 //! #[derive(AsyncRead, AsyncWrite)]
 //! struct Wrapper {
 //!     stream: TcpStream,
@@ -19,7 +19,7 @@
 //!
 //! ```rust
 //! use derive_tokio_io::{AsyncRead, AsyncWrite};
-//! 
+//!
 //! #[derive(AsyncRead, AsyncWrite)]
 //! struct Wrapper<IO> {
 //!     stream: IO,
@@ -31,7 +31,7 @@
 //!
 //! ```rust
 //! use derive_tokio_io::{AsyncRead, AsyncWrite};
-//! 
+//!
 //! #[derive(AsyncRead, AsyncWrite)]
 //! struct Wrapper<R, W> {
 //!     #[async_read]
@@ -45,7 +45,7 @@
 //!
 //! ```rust
 //! use derive_tokio_io::{AsyncRead, AsyncWrite};
-//! 
+//!
 //! #[derive(AsyncRead, AsyncWrite)]
 //! struct Wrapper<R, W>(
 //!     #[async_read]
