@@ -36,7 +36,7 @@ pub(crate) fn expand_async_write(input: DeriveInput) -> syn::Result<TokenStream>
 
             fn poll_shutdown(
                 self: ::std::pin::Pin<&mut Self>,
-                cx: &mut ::std::task::Context<'_>
+                cx: &mut ::std::task::Context<'_>,
             ) -> ::std::task::Poll<::std::io::Result<()>> {
                 unsafe { ::std::pin::Pin::new_unchecked(&mut self.get_unchecked_mut().#field_id).poll_shutdown(cx) }
             }

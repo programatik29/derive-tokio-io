@@ -1,3 +1,7 @@
+[![License](https://img.shields.io/crates/l/derive-tokio-io)](https://choosealicense.com/licenses/mit/)
+[![Crates.io](https://img.shields.io/crates/v/derive-tokio-io)](https://crates.io/crates/derive-tokio-io)
+[![Docs](https://img.shields.io/crates/v/derive-tokio-io?color=blue&label=docs)](https://docs.rs/derive-tokio-io/)
+
 # derive-tokio-io
 
 Derive [`AsyncRead`] and [`AsyncWrite`].
